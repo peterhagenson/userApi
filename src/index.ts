@@ -6,8 +6,11 @@ import usersRouter from "./routes/usersRouter"
 import connectDB from './db/connect'
 import dotenv from 'dotenv'
 
+
 dotenv.config()
 const app = express()
+app.use(express.json())
+
 const port = process.env.PORT
 const url = process.env.MONGO_URL
 

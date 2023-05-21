@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
     state: {
         type: String,
         trim: true,
-        maxlength: 2,
+        maxlength: 8,
         minlength: 2,
         default: 'my state'
     }
