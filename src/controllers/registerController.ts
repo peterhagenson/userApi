@@ -9,9 +9,10 @@ const addUser = async (req: Request, res: Response) => {
         if (user) {
             return
         }
+        //TODO error handling
     } catch (error) {
         throw new Error("error in addUser")
     }
 }
 
-export {addUser}
+export {addUser} 
