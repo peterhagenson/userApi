@@ -10,14 +10,15 @@ import session  from 'express-session'
 import cookieParser from 'cookie-parser'
 import passport from 'passport'
 
-const port = process.env.PORT
-const url = process.env.MONGO_URL
+
 
 //Middleware
 dotenv.config()
 const app = express()
 app.use(express.json())
-app.use(cors({origin: url, credentials: true}))
+const port = process.env.PORT
+const url = process.env.MONGO_URL
+app.use(cors({origin: "http://localhost:3001", credentials: true}))
 app.use(
   session({
     secret: 'secretcode',
