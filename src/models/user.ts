@@ -37,6 +37,10 @@ const UserSchema = new mongoose.Schema({
         maxlength: 8,
         minlength: 2,
         default: 'my state'
+    },
+    isAdmin: {  
+        type: Boolean,
+        default: false,
     }
 
 })

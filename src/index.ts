@@ -6,23 +6,37 @@ import usersRouter from "./routes/usersRouter"
 import connectDB from './db/connect'
 import dotenv from 'dotenv'
 import cors from 'cors'
-
-
-
-
-dotenv.config()
-const app = express()
-app.use(express.json())
-app.use(cors())
+import session  from 'express-session'
+import cookieParser from 'cookie-parser'
+import passport from 'passport'
 
 const port = process.env.PORT
 const url = process.env.MONGO_URL
+
+//Middleware
+dotenv.config()
+const app = express()
+app.use(express.json())
+app.use(cors({origin: url, credentials: true}))
+app.use(
+  session({
+    secret: 'secretcode',
+    resave: true,
+    saveUninitialized: true,  
+  })
+)
+app.use(cookieParser())
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/ping', pingRouter)
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/user', usersRouter)
 
+
+
+//server + mongoDB connection
 const start = async () => {
 try {  
 await connectDB(`${url}`)
