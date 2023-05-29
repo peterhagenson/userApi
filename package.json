@@ -25,6 +25,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@types/cors": "^2.8.13",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
