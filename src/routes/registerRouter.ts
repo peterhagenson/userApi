@@ -5,8 +5,6 @@ import {addUser} from '../controllers/registerController'
 const router = express.Router();
 
 router.post('/', async (req: Request, res: Response) => {
-
-  console.log('in registerRouter', req.body)
   try {
     await addUser(req, res)
     res.status(200).send({message: 'user added'})
