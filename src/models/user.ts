@@ -25,12 +25,7 @@ const UserSchema = new mongoose.Schema({
         //required: [true, 'Please provide password'],
         minlength: 6,
     },
-    city: {
-        type: String,
-        trim: true,
-        maxlength: 20,
-        default: 'my city',
-    },
+   /*
     state: {
         type: String,
         trim: true,
@@ -42,6 +37,7 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     }
+    */
 
 })
 

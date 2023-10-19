@@ -3,9 +3,9 @@ import User from '../models/user'
 import bcrypt from 'bcryptjs'
 
 const addUser = async (req: Request, res: Response) => {
-    //console.log('in register controller', req)
+    console.log('in register controller', req)
 
-    const { firstName, lastName, email, password } = req.body
+    //const { firstName, lastName, email, password } = req.body
 
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
@@ -16,9 +16,10 @@ const addUser = async (req: Request, res: Response) => {
         password: hashedPassword
     })
     try {
-        const user = await newUser.save()
-        if (user) {
-            return
+        //save newUser to db
+       const user = await newUser.save()
+       if (user) {
+         return
         }
         //TODO error handling
     } catch (error) {
