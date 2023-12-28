@@ -18,7 +18,7 @@ const app = express()
 app.use(express.json())
 const port = process.env.PORT
 const url = process.env.MONGO_URL
-app.use(cors({origin: "http://localhost:3001", credentials: true}))
+app.use(cors({origin: "http://localhost:3000", credentials: true}))
 app.use(
   session({
     secret: 'secretcode',
