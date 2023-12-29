@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.post('/', async (req: Request, res: Response) => {
   try {
-    await addUser(req, res)
-    res.status(200).send({message: 'user added'})
+    const response = await addUser(req, res)
+    res.status(200).send(response)
   } catch (error) {
     res.status(500).json({ msg: 'there was an error' })
   }

@@ -15,7 +15,7 @@ const addUser = async (req: Request, res: Response) => {
         //save newUser to db
        const user = await newUser.save()
        if (user) {
-         return
+         return { msg: 'user added' }
         }
         //TODO error handling
     } catch (error) {

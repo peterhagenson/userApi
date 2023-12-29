@@ -1,6 +1,6 @@
 import express from 'express'
 import { Request, Response } from 'express'
-import loginUser from '../controllers/loginController'
+import {loginUser} from '../controllers/loginController'
 const router = express.Router();
 
 router.post('/', async (req: Request, res: Response) => {
