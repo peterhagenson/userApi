@@ -4,9 +4,9 @@ import {loginUser} from '../controllers/loginController'
 const router = express.Router();
 
 router.post('/', async (req: Request, res: Response) => {
-    const { email, password } = req.body
+    const { username, password } = req.body
     try {
-    const response = await loginUser(email, password, res)
+    const response = await loginUser(username, password, res)
     res.status(200).send(response)
     }
     catch (error) {

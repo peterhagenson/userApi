@@ -33,7 +33,7 @@ app.use(passport.session())
 app.use('/ping', pingRouter)
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
-app.use('/user', usersRouter)
+app.use('/users', usersRouter)
 
 
 
